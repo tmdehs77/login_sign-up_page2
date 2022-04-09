@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="kor">
+    <head>
+        <meta charset="UTF-8">
+        <title>회원가입 페이지</title>
+
+        <link rel="stylesheet" href="./static/font.css">
+        <link rel="stylesheet" href="./static/layout_signup.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/ad0de88207.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <div class="top_container">         <!--고정 상단 바-->
+            <div class="page_title">
+                <i class="fa-solid fa-shirt"></i> SD Shop
+            </div>
+
+            <div class="text_login">
+                <a href="login.html" class="signin-link">로그인</a>
+            </div>
+
+            <div class="text_signup">
+                <a href="signup.html" class="signup-link">회원가입</a>
+            </div>
+        </div>
+        <div class="menu">
+            <span class="item">상의</span>
+            <span class="item">하의</span>
+            <span class="item">아우터</span>
+            <span class="item">악세서리</span>
+            
+            
+            <form action="" class="search">
+                <input type="text" class="" placeholder="search">
+                <button type="button" class="btn_search">🔎</button>
+            </form>
+            
+        </div>
+    
+        <div class="content">               <!--정보 입력 창 내용-->
+            <span class="txt">아이디 입력</span>
+            <div class="id_box">
+                <form action="">
+                    <input type="text" class="id" placeholder="아이디를 입력해주세요.">
+                </form>
+            </div>
+
+            <span class="txt">비밀번호 (password)</span>
+            <div class="pw_box">
+                    <input type="password" class="pw" id="pw1" placeholder="비밀번호를 입력해주세요.">
+            </div>
+
+            <span class="txt">비밀번호 (password) 확인</span>
+            <div class="pw_check_box">
+                <input type="password" class="pw_check" id="pw2" onkeyup="pwCheck()" placeholder="비밀번호를 다시 입력해주세요.">
+                <div id="ConfirmMsg"></div>
+            </div>
+
+            <span class="txt">학번</span> 
+            <div class="stNum_box">
+                <input type="text" class="student-number" id="stNum" onkeyup="stNumtoMajor()" placeholder="학번을 입력해주세요.">
+            </div>
+
+            <span class="txt">전공 선택</span>
+            <div class="major">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Major
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">컴퓨터공학부</a></li>
+                  <li><a class="dropdown-item" href="#">기계공학부</a></li>
+                  <li><a class="dropdown-item" href="#">메카트로닉스공학부</a></li>
+                  <li><a class="dropdown-item" href="#">전기전자통신공학부</a></li>
+                  <li><a class="dropdown-item" href="#">디자인/건축공학부</a></li>
+                  <li><a class="dropdown-item" href="#">산업경영학부</a></li>
+                  <li><a class="dropdown-item" href="#">에너지신소재화학공학부</a></li>
+                  <li><a class="dropdown-item" href="#">고용서비스정책학과</a></li>
+                </ul>
+              </div>
+
+              <span class="txt">휴대폰 번호</span> 
+            <div class="phonenumber_box">
+                <form action="">
+                    <input type="number" class="phone-number" id="phnum" onkeyup="phoneNumberAutoHipen()" placeholder="예시) 010-xxxx-xxxx">
+                </form>
+            </div>
+
+            <div class="btn">
+                <button class="signup">sign-up</button>
+                <button class="cancel" onclick="location.href='login.html'">cancel</button>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        
+        <script>
+            function pwCheck() {
+                let pw = document.getElementById('pw1').value;
+                let pwch = document.getElementById('pw2').value;
+                let msg = document.getElementById('ConfirmMsg');
+
+                if (pw != pwch) {       // 비밀번호와 확인용 비밀번호가 같지 않으면
+                    msg.innerHTML = "비밀번호가 일치하지 않습니다."; // 일치 x 메세지
+                }
+
+                else {                  // 일치하는 경우
+                    msg.innerHTML = "비밀번호가 일치합니다.";
+                }
+            }
+
+            function phoneNumberAutoHipen() {
+                let phNum = document.getElementById('phnum').value;
+                
+                phNum = phNum.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3");
+
+            }
+
+            function stNumtoMajor() {
+                let stNum = document.getElementById('stNum').value;
+                let ul = document.getElementsByTagName('ul');
+                let lis = ul.getElementsByTagName('li');
+
+                console.log(typeof(stNum));
+
+                let num1 = "12";
+                let num2 = "13";
+                let num3 = "14";
+                let num4 = "15";
+                let num5 = "16";
+                let num6 = "17";
+                let num7 = "18";
+
+                stNum.addEventListener('change', function(){
+                    if (stNum.includes(num1)) {
+                        lis = lis[1];
+                    }
+                    if (stNum.includes(num2)) {
+                        lis = lis[0];
+                    }
+                    if (stNum.includes(num3)) {
+                        lis = lis[2];
+                    }
+                    if (stNum.includes(num4)) {
+                        lis = lis[4];
+                    }
+                    if (stNum.includes(num5)) {
+                        lis = lis[3];
+                    }
+                    if (stNum.includes(num6)) {
+                        lis = lis[6];
+                    }
+                    if (stNum.includes(num7)) {
+                        lis = lis[5];
+                    }
+                });
+            }
+
+        </script>
+    </body>
+</html>

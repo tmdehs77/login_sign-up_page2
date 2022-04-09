@@ -1,0 +1,92 @@
+
+body{
+    padding-top: 300px;
+    background-color:whitesmoke;
+}
+
+.top_container{
+    position: fixed;
+    top:0;
+    left:0;
+    background-color:whitesmoke;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+}
+
+.page_title{
+    margin-left: 20px;
+    text-align: center;
+    font-family: 'KOTRA_BOLD-Bold';
+    font-size: 50px;
+}
+.text_login {
+    position: absolute;
+    right: 120px;
+    top: 10px;
+    font-weight: bolder;
+}
+.text_signup{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-weight: bolder;
+}
+.signin-link, .signup-link{
+    text-decoration-line:none;
+    text-decoration: none;
+    color:black;
+}
+
+.menu{
+    position: fixed;
+    top: 138px;
+    background-color:rgb(197, 208, 255);
+    width: 100%;
+    padding: 10px 10px;
+    font-weight: bolder;
+    white-space: nowrap;
+    margin-bottom: 100px;
+    font-family: 'KyoboHand';
+}
+.item{
+    padding-right: 50px;
+    padding-left: 30px;
+}
+.search{
+    position:absolute;
+    top: 8px;
+    right:20px;
+}
+
+.content{
+    text-align: center;
+    background-color:whitesmoke;
+}
+
+.id, .pw{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'KyoboHand';
+}
+.id{
+    margin-bottom: 20px;
+}
+.txt{
+    font-family: 'KyoboHand';
+    font-weight:bold;
+    font-size: 20px;
+}
+
+.login{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-family: 'NeoDunggeunmo';
+    background-color :lightslategray;
+}
